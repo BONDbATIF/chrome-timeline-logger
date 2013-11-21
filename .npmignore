@@ -1,0 +1,19 @@
+# Temp Files
+**/*.log
+
+# Build Files
+.build/
+node_modules/
+
+# Development Files
+.travis*
+Cakefile
+Makefile
+BACKERS.md
+CONTRIBUTING.md
+HISTORY.md
+**/src/
+**/test
+
+# ide files
+ide/

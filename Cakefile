@@ -1,0 +1,1 @@
+require('./.cake/main.coffee')
