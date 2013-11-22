@@ -1,4 +1,4 @@
-# Timeline Logger
+# Chrome Timeline Logger
 
 [![Build Status](https://secure.travis-ci.org/pflannery/timeline-logger.png?branch=master)](http://travis-ci.org/pflannery/timeline-logger "Check this project's build status on TravisCI")
 [![NPM version](https://badge.fury.io/js/timeline-logger.png)](https://npmjs.org/package/timeline-logger "View this project on NPM")
@@ -10,11 +10,11 @@ This logger helps generates a timeline JSON file that's compatible with the Chro
 
 ## Installation
 
-    npm install timeline-logger
+    npm install chrome-timeline-logger
 
 ## Usage
 
-    var timeline = require('timeline-logger');
+    var timeline = require('chrome-timeline-logger');
     var builder = new timeline.TimelineBuilder();
 
     // create a Program record
