@@ -3,20 +3,36 @@ assert = require('assert')
 joe = require('joe')
 {expect} = require('chai')
 balUtil = require('bal-util')
+fsUtil = require('fs')
 _ = require('lodash')
 
 # app test dependencies
 #================
 {TimelineLogger, TimelineBuilder, TimelineRecordTypes} = require("../../out/TimelineLogger")
 
-testOutPath = "test/out-actual"
-testOutExpectedPath = "test/out-expected"
+testOutPath = "./test/out-actual"
+testOutExpectedPath = "./test/out-expected"
 
 testConfig =
 	removeWhitespace: false
 	contentRemoveRegex: null
 
 generateMethods = []
+
+
+
+
+# remove the out-actual folder if present
+if fsUtil.existsSync(testOutPath) 
+	files = fsUtil.readdirSync(testOutPath)
+
+	for file in files
+		fsUtil.unlinkSync(testOutPath + "/" + file)
+
+	fsUtil.rmdirSync(testOutPath)
+
+# ensure the out-actual folder exists.
+fsUtil.mkdirSync(testOutPath)
 
 #================
 # Following was taken from docpads file testing. written by http://github.com/balupton
