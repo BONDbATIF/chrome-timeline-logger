@@ -14,27 +14,34 @@ This logger helps generates a timeline JSON file that's compatible with the Chro
 
 ## Usage
 
-    var timeline = require('chrome-timeline-logger');
-    var builder = new timeline.TimelineBuilder();
+```javascript
+var timeline = require('chrome-timeline-logger');
+var builder = new timeline.TimelineBuilder();
 
-    // create a Program record
-    programEvent = builder.createEvent("Program");
+timeline = require('chrome-timeline-logger');
+builder = new timeline.TimelineBuilder();
 
-    // create a TimeStamp record
-    builder.createEvent("TimeStamp", {message: "hi mum!"});
+// create a Program record
+programEvent = builder.startEvent("Program");
 
-    //	do some stuff
-    for(var index; index<100; index++)
-        console.log("Some output");
+//	do some stuff
+for (index = _i = 0; _i < 100; index = ++_i) {
 
-    // end the TimeStamp record
-    builder.end();
+  // create a TimeStamp record
+  builder.startEvent("TimeStamp", {message: "hi mum " + index + "!"});
+  console.log("some worload");
+  
+  // end the TimeStamp record
+  builder.endEvent();
+}
 
-    // end the Program record
-    builder.end();
-    
-    var logger = new timeline.TimelineLogger();
-    logger.save "some-file-path", programEvent
+// end the Program record
+builder.endEvent();
+
+logger = new timeline.TimelineLogger();
+
+logger.save("./test.json", programEvent);
+```
 
 ## API
 
