@@ -50,6 +50,11 @@ logger = new timeline.TimelineLogger();
 logger.save("./test.json", programEvent);
 ```
 
+
+- Best way to discover support events and their data is to make a recording in the timeline tool and examine it's output ;)
+- I've also made an attmempt to list them here [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
+
+
 ## Above Example Output
 
 ![image](https://f.cloud.github.com/assets/1727302/1598230/448f7d8e-5329-11e3-9c5d-aa83e9bc5c3b.png)
