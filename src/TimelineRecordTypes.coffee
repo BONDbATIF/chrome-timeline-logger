@@ -1,18 +1,30 @@
+# best way to discover event data is to make a recording in the timeline tool and examine it's output ;)
+
 ###
 event:
 	// all events
 	startTime:			{number}
 	endTime:			{number}
-	data:				{object}
 	children:			{array}
 
 	// optional
+	data:				{object}
 	frameId:			{number}
-	usedHeapSizeDelta	{number}
-	usedHeapSize:		{number}
-	counters:			{object}
+	usedHeapSizeDelta:		{number}
+	usedHeapSize:			{number}
+	counters:				{object}
+###
+
 
 ###
+counters:
+	documents: 		{number}
+	nodes:			{number}
+	jsEventListeners:	{number}
+###
+
+
+
 
 # useful event info
 
