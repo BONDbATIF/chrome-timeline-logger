@@ -25,11 +25,18 @@ builder = new timeline.TimelineBuilder();
 programEvent = builder.startEvent("Program");
 
 //	do some stuff
-for (index = _i = 0; _i < 100; index = ++_i) {
+for (index = _i = 0; _i < 10; index = ++_i) {
 
   // create a TimeStamp record
-  builder.startEvent("TimeStamp", {message: "hi mum " + index + "!"});
-  console.log("some worload");
+  event = builder.startEvent("TimeStamp", {message: "hi mum " + index + "!"});
+  
+  // set the memory useage for this event
+  event.usedHeapSize = process.memoryUsage().heapUsed;
+
+  // demonstrates how to set the documents count in the counters section
+  event.counters = { documents: index }
+  
+  console.log("some work load");
   
   // end the TimeStamp record
   builder.endEvent();
@@ -42,6 +49,11 @@ logger = new timeline.TimelineLogger();
 
 logger.save("./test.json", programEvent);
 ```
+
+## Above Example Output
+
+![image](https://f.cloud.github.com/assets/1727302/1598230/448f7d8e-5329-11e3-9c5d-aa83e9bc5c3b.png)
+
 
 ## API
 
@@ -57,7 +69,10 @@ logger.save("./test.json", programEvent);
 |----|----|----|-----------
 |startEvent         |method|string type, [object data]|starts a timeline event. Types are defined in [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
 |endEvent           |method|none|ends the currently started timeline event.
-<--|reset           |method|none|resets all events back to no events -->
+
+<!--
+|reset           |method|none|resets all events back to no events 
+-->
 
 ######TimelineRecord
 |name|type|args|description
