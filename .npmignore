@@ -3,6 +3,7 @@
 
 # Build Files
 .build/
+.cake/
 node_modules/
 
 # Development Files
