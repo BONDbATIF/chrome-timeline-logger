@@ -4,7 +4,6 @@
 # Build Files
 .build/
 node_modules/
+test/out/
+test/out-actual/*.*
 out/
-
-# Development Files
-**/test/

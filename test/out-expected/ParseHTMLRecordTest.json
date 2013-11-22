@@ -1,0 +1,2 @@
+["0.0.1",
+{"type":"Program","data":{},"children":[{"type":"ParseHTML","data":{},"children":[],"startTime":1,"endTime":10,"stackTrace":[{"functionName":"L","scriptId":"114","url":"https://someurl/to.a.script.file","lineNumber":73,"columnNumber":184}]}],"startTime":1,"endTime":50001}]
