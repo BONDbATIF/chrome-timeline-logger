@@ -50,7 +50,7 @@ logger.save("./test.json", programEvent);
 
 
 - Best way to discover support events and their data is to make a recording in the timeline tool and examine it's output ;)
-- I've also made an attmempt to list them here [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
+- I've also made an attempt to list them here [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
 
 
 ## Above Example Output
