@@ -18,17 +18,14 @@ This logger helps generates a timeline JSON file that's compatible with the Chro
 var timeline = require('chrome-timeline-logger');
 var builder = new timeline.TimelineBuilder();
 
-timeline = require('chrome-timeline-logger');
-builder = new timeline.TimelineBuilder();
-
 // create a Program record
-programEvent = builder.startEvent("Program");
+var programEvent = builder.startEvent("Program");
 
 //	do some stuff
 for (index = _i = 0; _i < 10; index = ++_i) {
 
   // create a TimeStamp record
-  event = builder.startEvent("TimeStamp", {message: "hi mum " + index + "!"});
+  var event = builder.startEvent("TimeStamp", {message: "hi mum " + index + "!"});
   
   // set the memory useage for this event
   event.usedHeapSize = process.memoryUsage().heapUsed;
@@ -45,9 +42,10 @@ for (index = _i = 0; _i < 10; index = ++_i) {
 // end the Program record
 builder.endEvent();
 
-logger = new timeline.TimelineLogger();
+var logger = new timeline.TimelineLogger();
 
 logger.save("./test.json", programEvent);
+
 ```
 
 
