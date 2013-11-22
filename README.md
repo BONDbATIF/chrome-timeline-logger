@@ -64,14 +64,14 @@ logger.save("./test.json", programEvent);
 
 |name|type|args|description
 |----|----|----|-----------
-|save|method|string filepath, timelineRecordList[]|saves an array of timeline records to a file specified by the filepath
+|save()|method|string filepath, timelineRecordList[]|saves an array of timeline records to a file specified by the filepath
 
 ######TimelineBuilder
 
 |name|type|args|description
 |----|----|----|-----------
-|startEvent         |method|string type, [object data]|starts a timeline event. Types are defined in [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
-|endEvent           |method|none|ends the currently started timeline event.
+|startEvent()         |method|string type, [object data]|starts a timeline event. Types are defined in [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
+|endEvent()           |method|none|ends the currently started timeline event.
 
 <!--
 |reset           |method|none|resets all events back to no events 
@@ -80,8 +80,8 @@ logger.save("./test.json", programEvent);
 ######TimelineRecord
 |name|type|args|description
 |----|----|----|-----------
-|start|method|none|sets startTime to Date.now()
-|end|method|none|sets endTime to Date.now()
+|start()|method|none|sets startTime to Date.now()
+|end()|method|none|sets endTime to Date.now()
 |startTime|number||
 |endTime|number||
 |children|TimelineRecord[]||
