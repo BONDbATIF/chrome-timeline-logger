@@ -44,7 +44,7 @@ builder.endEvent();
 
 var logger = new timeline.TimelineLogger();
 
-logger.save("./test.json", programEvent);
+logger.saveSync("./test.json", programEvent);
 
 ```
 
