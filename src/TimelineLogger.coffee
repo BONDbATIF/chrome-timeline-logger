@@ -81,7 +81,10 @@ class TimelineLogger
 
 
 #================
+# The TimelineSaver was taken from here:
 # 
+# Copyright (C) 2012 Google Inc. All rights reserved.
+# https://chromium.googlesource.com/chromium/blink/+/master/Source/devtools/front_end/TimelineModel.js
 #================
 class TimelineSaver
 

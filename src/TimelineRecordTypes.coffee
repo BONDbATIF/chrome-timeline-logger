@@ -3,26 +3,37 @@
 ###
 event:
 	// all events
-	startTime:			{number}
-	endTime:			{number}
-	children:			{array}
+	startTime:				{number}
+	endTime:				{number}
+	children:				{array}
 
 	// optional
-	data:				{object}
-	frameId:			{number}
+	data:					{object}
+	frameId:				{number}
 	usedHeapSizeDelta:		{number}
 	usedHeapSize:			{number}
-	counters:				{object}
+	counters:				{object} (see below for more detail)
+	stackTrace: 			{object[]} (see below for more detail)
 ###
 
 
-###
-counters:
+### counters object
+
 	documents: 		{number}
 	nodes:			{number}
 	jsEventListeners:	{number}
+	
 ###
 
+### stackTrace item object
+
+	"functionName" : "test.com",
+	"scriptId" : "1047",
+	"url" : "file:///test.txt",
+	"lineNumber" : 1,
+	"columnNumber" : 1
+
+###
 
 
 
@@ -130,10 +141,6 @@ module.exports =
 
 
 		###
-		event:
-			stackTrace:
-			or
-			callStackTrace:
 		###
 		ParseHTML: "ParseHTML"
 
