@@ -1,6 +1,6 @@
 {
   "name": "chrome-timeline-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A NodeJs timeline logger tool for generating timeline json files for viewing in the chrome browser",
   "engines": {
     "node": "0.10",

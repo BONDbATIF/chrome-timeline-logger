@@ -49,7 +49,7 @@ logger.save("./test.json", programEvent);
 ```
 
 
-- Best way to discover support events and their data is to make a recording in the timeline tool and examine it's output ;)
+- Best way to discover supported events and their data is to make a recording in the timeline tool and examine it's output ;)
 - I've also made an attempt to list them here [TimelineRecordTypes](./src/TimelineRecordTypes.coffee)
 
 
@@ -64,8 +64,9 @@ logger.save("./test.json", programEvent);
 
 |name|type|args|description
 |----|----|----|-----------
-|save()|method|string filepath, timelineRecordList[]|saves an array of timeline records to a file specified by the filepath
-
+|save()|method|string filepath, timelineRecordList[], onComplete()|saves an array of timeline records to a file specified by the filepath
+|saveSync()|method|string filepath, timelineRecordList[]|Synchronous version of save
+|version|string||Appears at the top of each saved timeline json file
 ######TimelineBuilder
 
 |name|type|args|description

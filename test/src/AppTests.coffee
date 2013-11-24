@@ -20,8 +20,6 @@ testConfig =
 generateMethods = []
 
 
-
-
 # remove the out-actual folder if present
 if fsUtil.existsSync(testOutPath) 
 	files = fsUtil.readdirSync(testOutPath)
@@ -126,6 +124,7 @@ ProgramRecordTest = (childCallback) ->
 
 	# test
 	logger = new TimelineLogger()
+	logger.version = "tests"
 	logger.save "#{testOutPath}/#{filename}.json", programEvent
 
 	return
@@ -242,7 +241,7 @@ generateMethods.push (childCallback) ->
 
 	ProgramRecordTest (builder) ->
 
-		decodeImageEvent = builder.startEvent(TimelineRecordTypes.DecodeImage, {url: "http://github.com/pflannery/timeline-logger"})
+		decodeImageEvent = builder.startEvent(TimelineRecordTypes.DecodeImage, {url: "http://github.com/pflannery/chrome-timeline-logger"})
 
 		# end the timeline event
 		builder.endEvent()

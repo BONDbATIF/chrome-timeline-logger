@@ -1,2 +1,2 @@
-["0.0.1",
+["tests",
 {"type":"Program","data":{},"children":[{"type":"EventDispatch","data":{"type":"TestEvent"},"children":[],"startTime":1,"endTime":10}],"startTime":1,"endTime":50001}]

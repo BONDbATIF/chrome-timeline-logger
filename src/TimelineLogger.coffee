@@ -9,27 +9,37 @@ TimelineRecordTypes = require("./TimelineRecordTypes")
 #================
 class TimelineLogger
 
+	constructor: (version) ->
+		# version field that is used at the top of each log file
+		@version = version or "chrome-timeline-logger"
+
 	# instance
 
+	#================
+	save: (filename, topLevelEvents, complete) ->
+
+		if Array.isArray(topLevelEvents) == false
+			saveRecords = [topLevelEvents]
+		else
+			saveRecords = topLevelEvents
+
+		saveRecords = saveRecords
+		unless saveRecords
+			throw new Error("TimelineLogger: There are no timeline records to save")
+
+		now = new Date();
+		filename = filename or "timeline-#{now.toISO8601Compact()}.json"
+
+		callback = (stream) ->
+			if complete
+				stream.on "close", complete
+			saver = new TimelineSaver(stream)
+			saver.save saveRecords, @version, complete
+
+		_createFileWriter filename, callback.bind(@)
 
 	#================
-	_createFileWriter: (filename, callback) ->
-		
-		# would fail on a process.exit so have written a writeStreamSync below
-		# stream = new fsUtil.createWriteStream(filename)
-
-		# fakes a createWriteStreamSync
-		stream =
-			buffer: ""
-			write: (append) ->
-				@buffer += append
-			close: ->
-				fsUtil.writeFileSync(filename, @buffer)
-
-		callback(stream)
-
-	#================
-	save: (filename, topLevelEvents) ->
+	saveSync: (filename, topLevelEvents) ->
 
 		if Array.isArray(topLevelEvents) == false
 			saveRecords = [topLevelEvents]
@@ -45,9 +55,29 @@ class TimelineLogger
 
 		callback = (stream) ->
 			saver = new TimelineSaver(stream)
-			saver.save saveRecords, "0.0.1"
+			saver.save saveRecords, @version
 
-		@_createFileWriter filename, callback.bind(@)
+		_createFileWriterSync filename, callback.bind(@)
+
+	# private
+
+	#================
+	_createFileWriter = (filename, callback) ->
+		stream = new fsUtil.createWriteStream(filename)
+		callback(stream)
+
+	#================
+	_createFileWriterSync = (filename, callback) ->
+		# fakes a createWriteStreamSync
+		stream =
+			buffer: ""
+			write: (append) ->
+				@buffer += append
+			close: ->
+				fsUtil.writeFileSync(filename, @buffer)
+
+		callback(stream)
+
 
 
 #================
