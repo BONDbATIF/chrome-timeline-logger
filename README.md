@@ -62,11 +62,37 @@ logger.saveSync("./test.json", programEvent);
 
 ######TimelineLogger
 
-|name|type|args|description
-|----|----|----|-----------
-|save()|method|string filepath, timelineRecordList[], onComplete()|saves an array of timeline records to a file specified by the filepath
-|saveSync()|method|string filepath, timelineRecordList[]|Synchronous version of save
-|version|string||Appears at the top of each saved timeline json file
+<table>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>type</th>
+			<th>args</th>
+			<th>description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>save()</td>
+			<td>method</td>
+			<td>string filepath<br />timelineRecordList[]<br />onComplete()</td>
+			<td>saves an array of timeline records to a file specified by the filepath</td>
+		</tr>
+		<tr>
+			<td>saveSync()</td>
+			<td>method</td>
+			<td>string filepath<br />timelineRecordList[]</td>
+			<td>Synchronous version of save</td>
+		</tr>
+		<tr>
+			<td>version</td>
+			<td>string</td>
+			<td></td>
+			<td>Appears at the top of each saved timeline json file</td>
+		</tr>
+	</tbody>
+</table>
+
 ######TimelineBuilder
 
 |name|type|args|description
