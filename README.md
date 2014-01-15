@@ -4,7 +4,8 @@
 [![NPM version](https://badge.fury.io/js/chrome-timeline-logger.png)](https://npmjs.org/package/chrome-timeline-logger "View this project on NPM")
 [![Dependency Status](https://gemnasium.com/pflannery/chrome-timeline-logger.png)](https://gemnasium.com/pflannery/chrome-timeline-logger)
 [![Gittip donate button](http://img.shields.io/gittip/pflannery.png)](https://www.gittip.com/pflannery/ "Donate weekly to this project using Gittip")
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pflannery/chrome-timeline-logger/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Analytics](https://ga-beacon.appspot.com/UA-47157500-1/chrome-timeline-logger/readme)](https://github.com/pflannery/chrome-timeline-logger)
+
 
 This logger helps generates a timeline JSON file that's compatible with the Chrome Dev Tools timeline viewer
 
