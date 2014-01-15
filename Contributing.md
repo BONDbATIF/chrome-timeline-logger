@@ -2,7 +2,7 @@
 
 ## Bug reports
 
-[Post your bug report on the GitHub Issue Tracker for this project](https://github.com/pflannery/timeline-logger/issues)
+[Post your bug report on the GitHub Issue Tracker for this project](https://github.com/pflannery/chrome-timeline-logger/issues)
 
 
 ## Development
